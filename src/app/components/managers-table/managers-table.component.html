@@ -1,0 +1,25 @@
+<table class="table p-2 m-5 " *ngIf=" allowed == true" >
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Role</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.role}}</td>
+        <td><button class="btn btn-outline-warning " routerLink="/edit/{{user.firstName}}/{{user.lastName}}" >Edit</button></td>
+        <td><button class="btn btn-danger" (click)="delete(user.id)">X</button></td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+  <div *ngIf="allowed == false">
+    <p>You dont have access here</p>
+  </div>

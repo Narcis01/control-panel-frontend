@@ -1,0 +1,22 @@
+<table class="table p-2 m-5 " >
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Role</th>
+        <th *ngIf="role !== 'USER'">Edit</th>
+        <th *ngIf="role !== 'USER'">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.role}}</td>
+        <td *ngIf="role !== 'USER'" ><button class="btn btn-outline-warning " routerLink="/edit/{{user.firstName}}/{{user.lastName}}" >Edit</button></td>
+        <td *ngIf="role !== 'USER'"><button class="btn btn-danger" (click)="delete(user.id)">X</button></td>
+
+      </tr>
+      
+    </tbody>
+  </table>

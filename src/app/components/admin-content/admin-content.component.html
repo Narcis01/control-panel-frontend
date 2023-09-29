@@ -1,0 +1,9 @@
+<div>
+
+    <app-admins-table *ngIf=" role == 'ADMIN' " />
+
+    <div *ngIf=" role == 'USER' || role == 'MANAGER' ">
+        <p>You dont have access here</p>
+    </div>
+
+</div>

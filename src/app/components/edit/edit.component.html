@@ -1,0 +1,28 @@
+<div class="row justify-content-center col m-4">
+    <form (ngSubmit)="updateUser()" >
+        <div class="form-outline mb-4">
+            <input type="password" id="password" name="password" class="form-control" [(ngModel)]="password">
+            <label for="email" class="form-label">New Password</label>
+        </div>
+        <div class="form-outline mb-4">
+            <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="firstName">
+            <label for="email" class="form-label">First Name</label>
+        </div>
+        <div class="form-outline mb-4">
+            <input type="text" id="LastName" name="LastName" class="form-control" [(ngModel)]="lastName">
+            <label for="email" class="form-label">Last name</label>
+        </div>
+        <div class="form-outline mb-4">
+            <select name="role" [(ngModel)] = "role" id="role" class="m-2">
+                <option value="MANAGER"> Manager </option>
+                <option value="ADMIN"> Admin </option>
+                <option value="USER"> USER </option>
+
+            </select>
+            <label for="email" class="form-label">Role</label>
+        </div>
+        <button class="btn btn-primary btn-block mb-4 " type="submit">Update User</button>
+    </form>
+
+    <button class="btn btn-danger btn-block  " routerLink="/user">Back</button>
+</div>

@@ -1,0 +1,7 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="login">Navbar</a>
+    <button class="btn btn-success align-self-center" *ngIf=" role == 'ADMIN' " routerLink="/create">CREATE</button>
+    <p class="font-weight-bold" style="color: white;">Hello {{ name }}</p>
+    <button class="btn btn-success align-self-center" *ngIf=" signIn == true " (click) ="logout()" routerLink="/login">Logout</button>
+
+  </nav>
